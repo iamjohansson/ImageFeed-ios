@@ -11,9 +11,10 @@ class ImageListViewController: UIViewController {
         tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
     }
     
-    func configCell(for cell: ImageListCell, with indexPath: IndexPath) {
+    private func configCell(for cell: ImageListCell, with indexPath: IndexPath) {
         guard let image = UIImage(named: photos[indexPath.row]) else { return }
         
+        cell.applyGradient()
         cell.cellImage.image = image
         cell.dateLabel.text = dateFormatter.string(from: Date())
         
@@ -21,9 +22,7 @@ class ImageListViewController: UIViewController {
         let setLike = checkLike ? UIImage(named: "Like_button_active") : UIImage(named: "Like_button_inactive")
         cell.likeButton.setImage(setLike, for: .normal)
     }
-    
 }
-
 
 extension ImageListViewController: UITableViewDataSource {
     
