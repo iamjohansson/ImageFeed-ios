@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  ImageFeed-ios
-//
-//  Created by Admin on 31.07.2023.
-//
-
 import UIKit
 
 @main
