@@ -1,11 +1,15 @@
 import UIKit
 
 class ImageListViewController: UIViewController {
-
+    
     @IBOutlet private var tableView: UITableView!
     
     private let photos: [String] = Array(0...20).map{ "\($0)" }
-
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
