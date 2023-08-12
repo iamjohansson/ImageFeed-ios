@@ -18,6 +18,7 @@
 		84911DD82A7FC72400F18F70 /* YS Display-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84911DD52A7FC72300F18F70 /* YS Display-Medium.ttf */; };
 		84911DD92A7FC72400F18F70 /* YS Display-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84911DD62A7FC72300F18F70 /* YS Display-Bold.ttf */; };
 		84911DDA2A7FC72400F18F70 /* YS Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84911DD72A7FC72400F18F70 /* YS Regular.ttf */; };
+		849469962A87BDB00027C012 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849469952A87BDB00027C012 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		84911DD52A7FC72300F18F70 /* YS Display-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YS Display-Medium.ttf"; sourceTree = "<group>"; };
 		84911DD62A7FC72300F18F70 /* YS Display-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YS Display-Bold.ttf"; sourceTree = "<group>"; };
 		84911DD72A7FC72400F18F70 /* YS Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YS Regular.ttf"; sourceTree = "<group>"; };
+		849469952A87BDB00027C012 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,8 @@
 			children = (
 				84911D992A7821F200F18F70 /* AppDelegate.swift */,
 				84911D9B2A7821F200F18F70 /* SceneDelegate.swift */,
+				84911D9F2A7821F200F18F70 /* Main.storyboard */,
+				849469942A87BD920027C012 /* Profile */,
 				84911DCF2A7E662700F18F70 /* ImageList */,
 				84911DD02A7F975800F18F70 /* Helpers */,
 				84911DD32A7F97DB00F18F70 /* Resources */,
@@ -80,7 +84,6 @@
 			children = (
 				84911D9D2A7821F200F18F70 /* ImageListViewController.swift */,
 				84911DCD2A7E661700F18F70 /* ImageListCell.swift */,
-				84911D9F2A7821F200F18F70 /* Main.storyboard */,
 			);
 			path = ImageList;
 			sourceTree = "<group>";
@@ -112,6 +115,14 @@
 				84911DD72A7FC72400F18F70 /* YS Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		849469942A87BD920027C012 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				849469952A87BDB00027C012 /* ProfileViewController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				849469962A87BDB00027C012 /* ProfileViewController.swift in Sources */,
 				84911D9E2A7821F200F18F70 /* ImageListViewController.swift in Sources */,
 				84911DCE2A7E661700F18F70 /* ImageListCell.swift in Sources */,
 				84911D9A2A7821F200F18F70 /* AppDelegate.swift in Sources */,
