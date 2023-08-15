@@ -115,7 +115,6 @@
                                             <outlet property="dateLabel" destination="MGl-um-Foq" id="8En-dI-Nl3"/>
                                             <outlet property="gradient" destination="1uO-Sb-WnM" id="CL9-FM-7AL"/>
                                             <outlet property="likeButton" destination="ElV-OO-dhk" id="FY3-z0-aac"/>
-                                            <segue destination="cjf-t9-Wrm" kind="show" id="G8N-8D-913"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -137,6 +136,7 @@
                     <navigationItem key="navigationItem" id="wdr-Lg-z0h"/>
                     <connections>
                         <outlet property="tableView" destination="3oz-ig-Our" id="5nQ-av-tnf"/>
+                        <segue destination="cjf-t9-Wrm" kind="show" identifier="ShowSingleImage" id="EcX-rV-pno"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -224,6 +224,13 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Tab_profile_active" id="JZ3-vI-vTa"/>
+                    <connections>
+                        <outlet property="avatarImage" destination="hCf-KJ-dal" id="2qg-7p-rQR"/>
+                        <outlet property="descriptionLabel" destination="Qh0-8B-h06" id="Yhc-Zl-oe1"/>
+                        <outlet property="loginLabel" destination="DqU-ha-4Xz" id="989-U4-IGQ"/>
+                        <outlet property="logoutButton" destination="Ria-WG-cZZ" id="5ET-5I-SkG"/>
+                        <outlet property="nameLabel" destination="hA0-RJ-KNO" id="zGU-DV-j54"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MNv-VW-S5M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
