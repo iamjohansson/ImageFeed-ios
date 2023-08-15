@@ -19,6 +19,7 @@
 		84911DD92A7FC72400F18F70 /* YS Display-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84911DD62A7FC72300F18F70 /* YS Display-Bold.ttf */; };
 		84911DDA2A7FC72400F18F70 /* YS Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84911DD72A7FC72400F18F70 /* YS Regular.ttf */; };
 		849469962A87BDB00027C012 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849469952A87BDB00027C012 /* ProfileViewController.swift */; };
+		849469992A8BEBFD0027C012 /* SingleImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849469982A8BEBFD0027C012 /* SingleImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		84911DD62A7FC72300F18F70 /* YS Display-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YS Display-Bold.ttf"; sourceTree = "<group>"; };
 		84911DD72A7FC72400F18F70 /* YS Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YS Regular.ttf"; sourceTree = "<group>"; };
 		849469952A87BDB00027C012 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		849469982A8BEBFD0027C012 /* SingleImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				84911D992A7821F200F18F70 /* AppDelegate.swift */,
 				84911D9B2A7821F200F18F70 /* SceneDelegate.swift */,
 				84911D9F2A7821F200F18F70 /* Main.storyboard */,
+				849469972A8BEBCB0027C012 /* SingleImage */,
 				849469942A87BD920027C012 /* Profile */,
 				84911DCF2A7E662700F18F70 /* ImageList */,
 				84911DD02A7F975800F18F70 /* Helpers */,
@@ -123,6 +126,14 @@
 				849469952A87BDB00027C012 /* ProfileViewController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		849469972A8BEBCB0027C012 /* SingleImage */ = {
+			isa = PBXGroup;
+			children = (
+				849469982A8BEBFD0027C012 /* SingleImageViewController.swift */,
+			);
+			path = SingleImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +213,7 @@
 				849469962A87BDB00027C012 /* ProfileViewController.swift in Sources */,
 				84911D9E2A7821F200F18F70 /* ImageListViewController.swift in Sources */,
 				84911DCE2A7E661700F18F70 /* ImageListCell.swift in Sources */,
+				849469992A8BEBFD0027C012 /* SingleImageViewController.swift in Sources */,
 				84911D9A2A7821F200F18F70 /* AppDelegate.swift in Sources */,
 				84911DD22A7F977B00F18F70 /* DateFormatter.swift in Sources */,
 				84911D9C2A7821F200F18F70 /* SceneDelegate.swift in Sources */,
@@ -280,6 +292,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -334,6 +347,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -358,7 +372,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
-				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -392,7 +406,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
-				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
