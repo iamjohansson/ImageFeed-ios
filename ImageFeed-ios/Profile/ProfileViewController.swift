@@ -11,8 +11,7 @@ final class ProfileViewController: UIViewController {
         view.backgroundColor = UIColor(named: "YP Black (iOS)")
     }
     
-    
-    func setup() {
+    private func setup() {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "Avatar")
         
