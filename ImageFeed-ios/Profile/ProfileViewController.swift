@@ -53,9 +53,9 @@ final class ProfileViewController: UIViewController {
             label3.topAnchor.constraint(equalTo: label2.bottomAnchor, constant: 8),
             label3.leadingAnchor.constraint(equalTo: imageView.leadingAnchor)
         ])
-        
+        // Для @protos17: Изначально и с Большой буквы все работало и билдилось (кнопка логаута отображалась), ведь несмотря на то, что в github'е ассет идет с маленькой буквы /logout_button.imageset/Contents.json, у меня ассет был с Большой. Поменял и там и тут на маленькую, если это принципиально... (коммент уберу при акцепте работы)
         let button = UIButton()
-        button.setImage(UIImage(named: "Logout_button"), for: .normal)
+        button.setImage(UIImage(named: "logout_button"), for: .normal)
         
         button.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(button)
@@ -63,5 +63,4 @@ final class ProfileViewController: UIViewController {
         button.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
         button.centerYAnchor.constraint(equalTo: imageView.centerYAnchor).isActive = true
     }
-    
 }
