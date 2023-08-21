@@ -8,59 +8,59 @@ final class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        view.backgroundColor = UIColor(named: "YP Black (iOS)")
+        view.backgroundColor = UIColor.ypBlack
     }
     
     private func setup() {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "Avatar")
+        let profileImage = UIImageView()
+        profileImage.image = UIImage(named: "Avatar")
         
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(imageView)
+        profileImage.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(profileImage)
         
-        imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32).isActive = true
-        imageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
-        imageView.heightAnchor.constraint(equalToConstant: 70).isActive = true
-        imageView.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        profileImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32).isActive = true
+        profileImage.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
+        profileImage.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        profileImage.widthAnchor.constraint(equalToConstant: 70).isActive = true
         
-        let label1 = UILabel()
-        let label2 = UILabel()
-        let label3 = UILabel()
+        let nameLabel = UILabel()
+        let loginLabel = UILabel()
+        let aboutLabel = UILabel()
         
-        label1.text = "Екатерина Новикова"
-        label1.font = UIFont.boldSystemFont(ofSize: 23)
-        label1.textColor = UIColor(named: "YP White (iOS)")
+        nameLabel.text = "Екатерина Новикова"
+        nameLabel.font = UIFont.boldSystemFont(ofSize: 23)
+        nameLabel.textColor = UIColor.ypWhite
         
-        label2.text = "@ekaterina_nov"
-        label2.font = UIFont.systemFont(ofSize: 13)
-        label2.textColor = UIColor(named: "YP Gray (iOS)")
+        loginLabel.text = "@ekaterina_nov"
+        loginLabel.font = UIFont.systemFont(ofSize: 13)
+        loginLabel.textColor = UIColor.ypGray
         
-        label3.text = "Hello, world!"
-        label3.font = UIFont.systemFont(ofSize: 13)
-        label3.textColor = UIColor(named: "YP White (iOS)")
+        aboutLabel.text = "Hello, world!"
+        aboutLabel.font = UIFont.systemFont(ofSize: 13)
+        aboutLabel.textColor = UIColor.ypWhite
         
-        label1.translatesAutoresizingMaskIntoConstraints = false
-        label2.translatesAutoresizingMaskIntoConstraints = false
-        label3.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(label1)
-        view.addSubview(label2)
-        view.addSubview(label3)
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        loginLabel.translatesAutoresizingMaskIntoConstraints = false
+        aboutLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(nameLabel)
+        view.addSubview(loginLabel)
+        view.addSubview(aboutLabel)
         NSLayoutConstraint.activate([
-            label1.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8),
-            label1.leadingAnchor.constraint(equalTo: imageView.leadingAnchor),
-            label2.topAnchor.constraint(equalTo: label1.bottomAnchor, constant: 8),
-            label2.leadingAnchor.constraint(equalTo: imageView.leadingAnchor),
-            label3.topAnchor.constraint(equalTo: label2.bottomAnchor, constant: 8),
-            label3.leadingAnchor.constraint(equalTo: imageView.leadingAnchor)
+            nameLabel.topAnchor.constraint(equalTo: profileImage.bottomAnchor, constant: 8),
+            nameLabel.leadingAnchor.constraint(equalTo: profileImage.leadingAnchor),
+            loginLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
+            loginLabel.leadingAnchor.constraint(equalTo: profileImage.leadingAnchor),
+            aboutLabel.topAnchor.constraint(equalTo: loginLabel.bottomAnchor, constant: 8),
+            aboutLabel.leadingAnchor.constraint(equalTo: profileImage.leadingAnchor)
         ])
         // Для @protos17: Изначально и с Большой буквы все работало и билдилось (кнопка логаута отображалась), ведь несмотря на то, что в github'е ассет идет с маленькой буквы /logout_button.imageset/Contents.json, у меня ассет был с Большой. Поменял и там и тут на маленькую, если это принципиально... (коммент уберу при акцепте работы)
-        let button = UIButton()
-        button.setImage(UIImage(named: "logout_button"), for: .normal)
+        let logoutButton = UIButton()
+        logoutButton.setImage(UIImage(named: "logout_button"), for: .normal)
         
-        button.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(button)
+        logoutButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(logoutButton)
         
-        button.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
-        button.centerYAnchor.constraint(equalTo: imageView.centerYAnchor).isActive = true
+        logoutButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
+        logoutButton.centerYAnchor.constraint(equalTo: profileImage.centerYAnchor).isActive = true
     }
 }
