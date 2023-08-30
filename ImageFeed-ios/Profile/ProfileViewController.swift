@@ -35,7 +35,7 @@ final class ProfileViewController: UIViewController {
         aboutLabel.textColor = UIColor.ypWhite
         return aboutLabel
     }()
-    // Для @protos17: Изначально, и с Большой буквы все работало и билдилось (кнопка логаута отображалась), ведь несмотря на то, что в github'е ассет идет с маленькой буквы /logout_button.imageset/Contents.json, у меня ассет был с Большой. Поменял и там и тут на маленькую, если это принципиально... (коммент уберу при акцепте работы)
+    
     private let logoutButton: UIButton = {
         let logoutButton = UIButton()
         logoutButton.translatesAutoresizingMaskIntoConstraints = false
