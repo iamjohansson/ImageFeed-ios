@@ -23,6 +23,7 @@ final class WebViewViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
+        updateProgress()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
