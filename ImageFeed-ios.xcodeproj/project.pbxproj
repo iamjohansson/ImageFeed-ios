@@ -28,6 +28,7 @@
 		849469A72AA8FA8C0027C012 /* OAuth2Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849469A62AA8FA8C0027C012 /* OAuth2Service.swift */; };
 		849469A92AAA488A0027C012 /* OAuth2TokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849469A82AAA488A0027C012 /* OAuth2TokenStorage.swift */; };
 		849469AC2AAA54440027C012 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849469AB2AAA54440027C012 /* SplashViewController.swift */; };
+		849469AF2AB0E61F0027C012 /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 849469AE2AB0E61F0027C012 /* ProgressHUD */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				849469AF2AB0E61F0027C012 /* ProgressHUD in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +202,9 @@
 			dependencies = (
 			);
 			name = "ImageFeed-ios";
+			packageProductDependencies = (
+				849469AE2AB0E61F0027C012 /* ProgressHUD */,
+			);
 			productName = "ImageFeed-ios";
 			productReference = 84911D962A7821F200F18F70 /* ImageFeed-ios.app */;
 			productType = "com.apple.product-type.application";
@@ -228,6 +233,9 @@
 				Base,
 			);
 			mainGroup = 84911D8D2A7821F200F18F70;
+			packageReferences = (
+				849469AD2AB0E61F0027C012 /* XCRemoteSwiftPackageReference "ProgressHUD" */,
+			);
 			productRefGroup = 84911D972A7821F200F18F70 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -506,6 +514,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		849469AD2AB0E61F0027C012 /* XCRemoteSwiftPackageReference "ProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/relatedcode/ProgressHUD";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		849469AE2AB0E61F0027C012 /* ProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 849469AD2AB0E61F0027C012 /* XCRemoteSwiftPackageReference "ProgressHUD" */;
+			productName = ProgressHUD;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 84911D8E2A7821F200F18F70 /* Project object */;
 }
