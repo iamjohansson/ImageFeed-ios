@@ -29,6 +29,7 @@
 		849469A92AAA488A0027C012 /* OAuth2TokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849469A82AAA488A0027C012 /* OAuth2TokenStorage.swift */; };
 		849469AC2AAA54440027C012 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849469AB2AAA54440027C012 /* SplashViewController.swift */; };
 		849469AF2AB0E61F0027C012 /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 849469AE2AB0E61F0027C012 /* ProgressHUD */; };
+		849469B12AB391E40027C012 /* UIBlockingProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849469B02AB391E40027C012 /* UIBlockingProgressHUD.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		849469A62AA8FA8C0027C012 /* OAuth2Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2Service.swift; sourceTree = "<group>"; };
 		849469A82AAA488A0027C012 /* OAuth2TokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2TokenStorage.swift; sourceTree = "<group>"; };
 		849469AB2AAA54440027C012 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		849469B02AB391E40027C012 /* UIBlockingProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBlockingProgressHUD.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				84911DD12A7F977B00F18F70 /* DateFormatter.swift */,
+				849469B02AB391E40027C012 /* UIBlockingProgressHUD.swift */,
 				8494699A2A93D6420027C012 /* UIColor+Extension.swift */,
 			);
 			path = Helpers;
@@ -269,6 +272,7 @@
 				849469962A87BDB00027C012 /* ProfileViewController.swift in Sources */,
 				84911D9E2A7821F200F18F70 /* ImageListViewController.swift in Sources */,
 				849469A72AA8FA8C0027C012 /* OAuth2Service.swift in Sources */,
+				849469B12AB391E40027C012 /* UIBlockingProgressHUD.swift in Sources */,
 				849469A52AA8F8740027C012 /* OAuthTokenResponseBody.swift in Sources */,
 				849469A02AA518890027C012 /* AuthViewController.swift in Sources */,
 				84911DCE2A7E661700F18F70 /* ImageListCell.swift in Sources */,
