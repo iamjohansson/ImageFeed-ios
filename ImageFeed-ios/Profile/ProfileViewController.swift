@@ -1,15 +1,19 @@
 import UIKit
+import Kingfisher
 
 final class ProfileViewController: UIViewController {
     
-    private let profileImage: UIImageView = {
+    private let profileService = ProfileService.shared
+    private let profileImageService = ProfileImageService.shared
+    
+    private var profileImage: UIImageView = {
         let profileImage = UIImageView()
         profileImage.translatesAutoresizingMaskIntoConstraints = false
         profileImage.image = UIImage(named: "Avatar")
         return profileImage
     }()
     
-    private let nameLabel: UILabel = {
+    private var nameLabel: UILabel = {
         let nameLabel = UILabel()
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.text = "Екатерина Новикова"
@@ -18,7 +22,7 @@ final class ProfileViewController: UIViewController {
         return nameLabel
     }()
     
-    private let loginLabel: UILabel = {
+    private var loginLabel: UILabel = {
         let loginLabel = UILabel()
         loginLabel.translatesAutoresizingMaskIntoConstraints = false
         loginLabel.text = "@ekaterina_nov"
@@ -27,7 +31,7 @@ final class ProfileViewController: UIViewController {
         return loginLabel
     }()
     
-    private let aboutLabel: UILabel = {
+    private var aboutLabel: UILabel = {
         let aboutLabel = UILabel()
         aboutLabel.translatesAutoresizingMaskIntoConstraints = false
         aboutLabel.text = "Hello, world!"
@@ -52,6 +56,8 @@ final class ProfileViewController: UIViewController {
         view.backgroundColor = UIColor.ypBlack
         addSubViews()
         applyConstraint()
+        updateProfileDetails(profile: profileService.profile!)
+        updateProfileImage()
     }
     
     private func addSubViews() {
@@ -77,5 +83,31 @@ final class ProfileViewController: UIViewController {
             logoutButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             logoutButton.centerYAnchor.constraint(equalTo: profileImage.centerYAnchor)
         ])
+    }
+}
+
+extension ProfileViewController {
+    private func updateProfileDetails(profile: Profile?) {
+        guard let profile = profileService.profile else { return }
+        nameLabel.text = profile.name
+        loginLabel.text = profile.loginName
+        aboutLabel.text = profile.bio
+    }
+    
+    private func updateProfileImage() {
+        guard let profileImageURL = profileImageService.avatarURL,
+              let url = URL(string: profileImageURL)
+        else { return }
+        let processor = RoundCornerImageProcessor(cornerRadius: profileImage.frame.width)
+        profileImage.kf.indicatorType = .activity
+        profileImage.kf.setImage(
+            with: url,
+            placeholder: UIImage(named: "person.crop.circle.fill.png"),
+            options: [.processor(processor),
+                      .cacheSerializer(FormatIndicatedCacheSerializer.png)]
+        )
+        let cache = ImageCache.default
+        cache.clearMemoryCache()
+        cache.clearDiskCache()
     }
 }
