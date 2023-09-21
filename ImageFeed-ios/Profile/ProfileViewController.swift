@@ -5,6 +5,7 @@ final class ProfileViewController: UIViewController {
     
     private let profileService = ProfileService.shared
     private let profileImageService = ProfileImageService.shared
+    private var profileImageObserver: NSObjectProtocol?
     
     private var profileImage: UIImageView = {
         let profileImage = UIImageView()
@@ -56,8 +57,9 @@ final class ProfileViewController: UIViewController {
         view.backgroundColor = UIColor.ypBlack
         addSubViews()
         applyConstraint()
-        updateProfileDetails(profile: profileService.profile!)
+        updateProfileDetails()
         updateProfileImage()
+        observeProfileImage()
     }
     
     private func addSubViews() {
@@ -87,7 +89,7 @@ final class ProfileViewController: UIViewController {
 }
 
 extension ProfileViewController {
-    private func updateProfileDetails(profile: Profile?) {
+    private func updateProfileDetails() {
         guard let profile = profileService.profile else { return }
         nameLabel.text = profile.name
         loginLabel.text = profile.loginName
@@ -98,7 +100,7 @@ extension ProfileViewController {
         guard let profileImageURL = profileImageService.avatarURL,
               let url = URL(string: profileImageURL)
         else { return }
-        let processor = RoundCornerImageProcessor(cornerRadius: profileImage.frame.width)
+        let processor = RoundCornerImageProcessor(cornerRadius: 70, backgroundColor: .clear)
         profileImage.kf.indicatorType = .activity
         profileImage.kf.setImage(
             with: url,
@@ -109,5 +111,16 @@ extension ProfileViewController {
         let cache = ImageCache.default
         cache.clearMemoryCache()
         cache.clearDiskCache()
+    }
+    
+    private func observeProfileImage() {
+        profileImageObserver = NotificationCenter.default
+            .addObserver(
+                forName: ProfileImageService.DidChangeNotification,
+                object: nil,
+                queue: .main) { [weak self] _ in
+                    guard let self = self else { return }
+                    self.updateProfileImage()
+                }
     }
 }

@@ -18,7 +18,6 @@ final class WebViewViewController: UIViewController {
         super.viewDidLoad()
         webView.navigationDelegate = self
         autorizeInUnsplash()
-        updateProgress()
         estimatedProgressObservation = webView.observe(
             \.estimatedProgress,
              options: [],

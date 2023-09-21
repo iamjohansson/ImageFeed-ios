@@ -7,7 +7,7 @@ struct UserResult: Codable {
         case profileImage = "profile_image"
     }
 }
-
+// Добавил large вместо small,  т.к. качество аватарки будет не ок
 struct ProfileImageSize: Codable {
-    let small: String
+    let large: String
 }
