@@ -8,7 +8,7 @@ struct Profile: Codable {
     
     init(decoded: ProfileResult) {
         self.username = decoded.username
-        self.name = decoded.firstName + " " + decoded.lastName
+        self.name = decoded.firstName + " " + (decoded.lastName ?? "")
         self.loginName = "@" + decoded.username
         self.bio = decoded.bio
     }

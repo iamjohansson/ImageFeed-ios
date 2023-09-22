@@ -21,7 +21,12 @@ final class SplashViewController: UIViewController {
             print("\(oauth2TokenStorage.token ?? "token")")
             fetchProfile(token: token)
         } else {
-            guard let authViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AuthViewController") as? AuthViewController else { return }
+            guard
+                let authViewController = UIStoryboard(
+                    name: "Main",
+                    bundle: nil
+                ).instantiateViewController(withIdentifier: "AuthViewController") as? AuthViewController
+            else { return }
             authViewController.delegate = self
             authViewController.modalPresentationStyle = .fullScreen
             self.present(authViewController, animated: true)
