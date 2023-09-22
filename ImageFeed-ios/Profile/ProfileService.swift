@@ -17,7 +17,6 @@ final class ProfileService {
             switch result {
             case .success(let object):
                 let profile = Profile(decoded: object)
-                print("\(String(describing: self.profile))")
                 self.profile = profile
                 completion(.success(profile))
             case .failure(let error):
