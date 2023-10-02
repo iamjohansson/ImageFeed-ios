@@ -40,15 +40,10 @@ struct Photo {
     let thumbImageURL: String?
     let largeImageURL: String?
     let isLiked: Bool
-    
-    init(decoded: PhotoResult) {
-        self.id = decoded.id
-        self.size = CGSize(width: decoded.width ?? 0, height: decoded.height ?? 0)
-        self.createdAt = dateFormater.date(from: decoded.createdAt ?? "")
-        self.welcomeDescription = decoded.welcomeDescription
-        self.thumbImageURL = decoded.urls?.trumbImageURL
-        self.largeImageURL = decoded.urls?.largeImageURL
-        self.isLiked = decoded.isLiked ?? false
-    }
-    
+}
+
+// Модели для лайков
+
+struct LikeResult: Decodable {
+    let photo: PhotoResult?
 }

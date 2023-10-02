@@ -227,7 +227,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ElV-OO-dhk" userLabel="Like Button">
                                                     <rect key="frame" x="354" y="4" width="44" height="44"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" image="Like_button_active"/>
+                                                    <state key="normal" image="Like_button_inactive"/>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1uO-Sb-WnM" userLabel="Gradient">
                                                     <rect key="frame" x="16" y="196" width="382" height="30"/>
@@ -333,7 +333,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Like_button_active" width="44" height="44"/>
+        <image name="Like_button_inactive" width="44" height="44"/>
         <image name="Navigation_back_bar" width="24" height="24"/>
         <image name="Share_button" width="50" height="50"/>
         <image name="Stub" width="168" height="224"/>

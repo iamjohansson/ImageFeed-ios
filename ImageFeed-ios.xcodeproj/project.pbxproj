@@ -41,6 +41,7 @@
 		849469C62ABB64DD0027C012 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849469C52ABB64DD0027C012 /* TabBarController.swift */; };
 		849469C82AC3517F0027C012 /* PhotoResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849469C72AC3517F0027C012 /* PhotoResult.swift */; };
 		849469CA2AC355F20027C012 /* ImageListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849469C92AC355F20027C012 /* ImageListService.swift */; };
+		849469D92ACB5FC00027C012 /* Array + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849469D82ACB5FC00027C012 /* Array + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		849469C72AC3517F0027C012 /* PhotoResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResult.swift; sourceTree = "<group>"; };
 		849469C92AC355F20027C012 /* ImageListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListService.swift; sourceTree = "<group>"; };
 		849469CF2AC36F380027C012 /* ImageFeed-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ImageFeed-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		849469D82ACB5FC00027C012 /* Array + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				84911DD12A7F977B00F18F70 /* DateFormatter.swift */,
 				849469B02AB391E40027C012 /* UIBlockingProgressHUD.swift */,
 				8494699A2A93D6420027C012 /* UIColor+Extension.swift */,
+				849469D82ACB5FC00027C012 /* Array + Extension.swift */,
 				849469B82AB8D2920027C012 /* URLSession + Extension.swift */,
 			);
 			path = Helpers;
@@ -386,6 +389,7 @@
 				849469C82AC3517F0027C012 /* PhotoResult.swift in Sources */,
 				849469B52AB8CAC40027C012 /* ProfileResult.swift in Sources */,
 				8494699D2A9FB2260027C012 /* Constants.swift in Sources */,
+				849469D92ACB5FC00027C012 /* Array + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
