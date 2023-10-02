@@ -44,7 +44,7 @@ struct Photo {
     init(decoded: PhotoResult) {
         self.id = decoded.id
         self.size = CGSize(width: decoded.width ?? 0, height: decoded.height ?? 0)
-        self.createdAt = dateFormatter.date(from: decoded.createdAt ?? "")
+        self.createdAt = dateFormater.date(from: decoded.createdAt ?? "")
         self.welcomeDescription = decoded.welcomeDescription
         self.thumbImageURL = decoded.urls?.trumbImageURL
         self.largeImageURL = decoded.urls?.largeImageURL
