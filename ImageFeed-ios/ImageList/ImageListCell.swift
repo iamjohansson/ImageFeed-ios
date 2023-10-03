@@ -1,9 +1,15 @@
 import UIKit
 
+protocol ImagesListCellDelegate: AnyObject {
+    func imageListCellDidTapLike(_ cell: ImageListCell)
+}
+
 final class ImageListCell: UITableViewCell {
     
     static let reuseIdentifier = "ImageListCell"
     private var gradientInit = false
+    private let feedbackGenerator = UINotificationFeedbackGenerator()
+    weak var delegate: ImagesListCellDelegate?
     
     @IBOutlet var cellImage: UIImageView!
     @IBOutlet var likeButton: UIButton!
@@ -23,5 +29,15 @@ final class ImageListCell: UITableViewCell {
             cellImage.addSubview(gradient)
             gradientInit.toggle()
         }
+    }
+    
+    func setIsLike(entryValue: Bool) {
+        let image = entryValue ? UIImage(named: "Like_button_active") : UIImage(named: "Like_button_inactive")
+        likeButton.setImage(image, for: .normal)
+    }
+    
+    @IBAction private func likeButtonClicked(_ sender: Any) {
+        delegate?.imageListCellDidTapLike(self)
+        feedbackGenerator.notificationOccurred(.success)
     }
 }

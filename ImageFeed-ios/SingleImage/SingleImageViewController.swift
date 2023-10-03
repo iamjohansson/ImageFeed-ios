@@ -3,7 +3,6 @@ import Kingfisher
 
 final class SingleImageViewController: UIViewController {
     var imageURL: URL?
-    // sm
     
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private weak var scrollView: UIScrollView!
@@ -40,6 +39,7 @@ final class SingleImageViewController: UIViewController {
             case .success(let imageResult):
                 self.rescaleAndCentrImageInScrollView(image: imageResult.image)
             case .failure(let error):
+                    // алерт
                 assertionFailure("Failed \(error)")
             }
             UIBlockingProgressHUD.dismiss()

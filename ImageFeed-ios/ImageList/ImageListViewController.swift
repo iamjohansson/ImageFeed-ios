@@ -70,9 +70,7 @@ final class ImageListViewController: UIViewController {
             } else {
                 cell.dateLabel.text = "00-00"
             }
-            let checkLike = indexPath.row % 2 == 0
-            let setLike = checkLike ? UIImage(named: "Like_button_active") : UIImage(named: "Like_button_inactive")
-            cell.likeButton.setImage(setLike, for: .normal)
+            // нужно обработать при формировке ячеек
         }
     }
 }
@@ -89,7 +87,7 @@ extension ImageListViewController: UITableViewDataSource {
         guard let imageListCell = cell as? ImageListCell else {
             return UITableViewCell()
         }
-        // delegate
+        imageListCell.delegate = self
         configCell(for: imageListCell, with: indexPath)
         return imageListCell
     }
@@ -116,6 +114,26 @@ extension ImageListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row + 1 == imageListService.photos.count {
             imageListService.fetchPhotoNextPage()
+        }
+    }
+}
+
+extension ImageListViewController: ImagesListCellDelegate {
+    func imageListCellDidTapLike(_ cell: ImageListCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        let photo = photos[indexPath.row]
+        UIBlockingProgressHUD.showNewHUD()
+        imageListService.changeLike(photoId: photo.id, isLike: !photo.isLiked) { result in
+            switch result {
+            case .success:
+                self.photos = self.imageListService.photos
+                cell.setIsLike(entryValue: self.photos[indexPath.row].isLiked)
+                UIBlockingProgressHUD.dismiss()
+            case .failure:
+                // алерт потом
+                UIBlockingProgressHUD.dismiss()
+            }
+            
         }
     }
 }
