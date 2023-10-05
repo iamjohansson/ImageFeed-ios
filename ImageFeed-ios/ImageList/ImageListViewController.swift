@@ -68,9 +68,10 @@ final class ImageListViewController: UIViewController {
             if let date = imageListService.photos[indexPath.row].createdAt {
                 cell.dateLabel.text = dateFormatter.string(from: date as Date)
             } else {
-                cell.dateLabel.text = "00-00"
+                cell.dateLabel.text = ""
             }
-            // нужно обработать при формировке ячеек
+            let like = imageListService.photos[indexPath.row].isLiked
+            cell.setIsLike(entryValue: like)
         }
     }
 }
@@ -130,7 +131,7 @@ extension ImageListViewController: ImagesListCellDelegate {
                 cell.setIsLike(entryValue: self.photos[indexPath.row].isLiked)
                 UIBlockingProgressHUD.dismiss()
             case .failure:
-                // алерт потом
+                // TODO: alert
                 UIBlockingProgressHUD.dismiss()
             }
             
