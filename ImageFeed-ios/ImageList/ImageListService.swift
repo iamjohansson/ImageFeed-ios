@@ -10,6 +10,7 @@ final class ImageListService {
     private var task: URLSessionTask?
     private let urlSession = URLSession.shared
     private let storageToken = OAuth2TokenStorage()
+    let dateFormater = ISO8601DateFormatter()
     
     // MARK: Fetching
     
@@ -113,5 +114,11 @@ extension ImageListService {
                           thumbImageURL: photoResult.urls?.trumbImageURL,
                           largeImageURL: photoResult.urls?.largeImageURL,
                           isLiked: photoResult.isLiked ?? false)
+    }
+    
+    func clean() {
+        task = nil
+        photos = []
+        lastLoadedPage = nil
     }
 }

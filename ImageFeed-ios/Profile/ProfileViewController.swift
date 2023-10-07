@@ -6,6 +6,7 @@ final class ProfileViewController: UIViewController {
     private let token = OAuth2TokenStorage()
     private let profileService = ProfileService.shared
     private let profileImageService = ProfileImageService.shared
+    private let imageListService = ImageListService.shared
     private var profileImageObserver: NSObjectProtocol?
     
     private var profileImage: UIImageView = {
@@ -134,6 +135,7 @@ extension ProfileViewController {
         WebViewViewController.clean()
         profileImageService.clean()
         profileService.clean()
+        imageListService.clean()
         token.clean()
         
         guard let window = UIApplication.shared.windows.first else { fatalError("Invalid Configuration") }
