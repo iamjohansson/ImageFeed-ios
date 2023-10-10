@@ -34,3 +34,10 @@ final class ProfileService {
         return request
     }
 }
+
+extension ProfileService {
+    func clean() {
+        profile = nil
+        task = nil
+    }
+}

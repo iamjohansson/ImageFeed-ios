@@ -3,8 +3,10 @@ import Kingfisher
 
 final class ProfileViewController: UIViewController {
     
+    private let token = OAuth2TokenStorage()
     private let profileService = ProfileService.shared
     private let profileImageService = ProfileImageService.shared
+    private let imageListService = ImageListService.shared
     private var profileImageObserver: NSObjectProtocol?
     
     private var profileImage: UIImageView = {
@@ -45,6 +47,7 @@ final class ProfileViewController: UIViewController {
         let logoutButton = UIButton()
         logoutButton.translatesAutoresizingMaskIntoConstraints = false
         logoutButton.setImage(UIImage(named: "logout_button"), for: .normal)
+        logoutButton.addTarget(self, action: #selector(logoutButtonAction), for: .touchUpInside)
         return logoutButton
     }()
     
@@ -122,5 +125,34 @@ extension ProfileViewController {
                     guard let self = self else { return }
                     self.updateProfileImage()
                 }
+    }
+    
+    @objc private func logoutButtonAction() {
+        showAlert()
+    }
+    
+    private func cleanAndSwitchToSplashView() {
+        WebViewViewController.clean()
+        profileImageService.clean()
+        profileService.clean()
+        imageListService.clean()
+        token.clean()
+        
+        guard let window = UIApplication.shared.windows.first else { fatalError("Invalid Configuration") }
+        window.rootViewController = SplashViewController()
+    }
+    
+    private func showAlert() {
+        let alert = UIAlertController(
+            title: "Пока, пока!",
+            message: "Уверены что хотите выйти?",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "Да", style: .default) { [weak self] alertAction in
+            guard let self = self else { return }
+            self.cleanAndSwitchToSplashView()
+        })
+        alert.addAction(UIAlertAction(title: "Нет", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }

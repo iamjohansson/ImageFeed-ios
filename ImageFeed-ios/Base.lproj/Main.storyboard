@@ -26,7 +26,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FjA-5q-fte">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="414" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="kVO-2S-BeG">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="414" image="Stub" translatesAutoresizingMaskIntoConstraints="NO" id="kVO-2S-BeG">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                     </imageView>
                                 </subviews>
@@ -215,7 +215,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="230"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="Zpz-9E-Zqi" userLabel="Cell Image">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="Stub" translatesAutoresizingMaskIntoConstraints="NO" id="Zpz-9E-Zqi" userLabel="Cell Image">
                                                     <rect key="frame" x="16" y="4" width="382" height="222"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -227,7 +227,10 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ElV-OO-dhk" userLabel="Like Button">
                                                     <rect key="frame" x="354" y="4" width="44" height="44"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" image="Like_button_active"/>
+                                                    <state key="normal" image="Like_button_inactive"/>
+                                                    <connections>
+                                                        <action selector="likeButtonClicked:" destination="bwR-vY-qgp" eventType="touchUpInside" id="V8M-5c-CcN"/>
+                                                    </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1uO-Sb-WnM" userLabel="Gradient">
                                                     <rect key="frame" x="16" y="196" width="382" height="30"/>
@@ -266,7 +269,7 @@
                                             <outlet property="cellImage" destination="Zpz-9E-Zqi" id="9ub-2F-WUR"/>
                                             <outlet property="dateLabel" destination="MGl-um-Foq" id="8En-dI-Nl3"/>
                                             <outlet property="gradient" destination="1uO-Sb-WnM" id="CL9-FM-7AL"/>
-                                            <outlet property="likeButton" destination="ElV-OO-dhk" id="FY3-z0-aac"/>
+                                            <outlet property="likeButton" destination="ElV-OO-dhk" id="0rZ-sa-N7c"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -333,10 +336,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="0" width="200" height="132"/>
-        <image name="Like_button_active" width="44" height="44"/>
+        <image name="Like_button_inactive" width="44" height="44"/>
         <image name="Navigation_back_bar" width="24" height="24"/>
         <image name="Share_button" width="50" height="50"/>
+        <image name="Stub" width="168" height="224"/>
         <image name="Tab_editorial_active" width="30" height="30"/>
         <image name="auth_screen_logo" width="60" height="60"/>
         <image name="nav_back_button" width="24" height="24"/>

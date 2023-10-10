@@ -41,3 +41,10 @@ final class ProfileImageService {
         return request
     }
 }
+
+extension ProfileImageService {
+    func clean() {
+        avatarURL = nil
+        task = nil
+    }
+}
