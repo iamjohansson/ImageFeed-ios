@@ -48,6 +48,7 @@ final class ProfileViewController: UIViewController {
         logoutButton.translatesAutoresizingMaskIntoConstraints = false
         logoutButton.setImage(UIImage(named: "logout_button"), for: .normal)
         logoutButton.addTarget(self, action: #selector(logoutButtonAction), for: .touchUpInside)
+        logoutButton.accessibilityIdentifier = "logoutButton"
         return logoutButton
     }()
     
