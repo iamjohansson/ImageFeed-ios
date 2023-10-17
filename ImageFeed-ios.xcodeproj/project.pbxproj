@@ -49,6 +49,7 @@
 		84C1938A2ADD726100DD8B62 /* WebViewViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C193892ADD726100DD8B62 /* WebViewViewControllerSpy.swift */; };
 		84C193922ADD8E0400DD8B62 /* ImageFeed_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C193912ADD8E0400DD8B62 /* ImageFeed_iosUITests.swift */; };
 		84C193942ADD8E0400DD8B62 /* ImageFeed_iosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C193932ADD8E0400DD8B62 /* ImageFeed_iosUITestsLaunchTests.swift */; };
+		84C1939B2ADEB10700DD8B62 /* ProfileViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1939A2ADEB10700DD8B62 /* ProfileViewPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		84C1938F2ADD8E0400DD8B62 /* ImageFeed-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ImageFeed-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C193912ADD8E0400DD8B62 /* ImageFeed_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFeed_iosUITests.swift; sourceTree = "<group>"; };
 		84C193932ADD8E0400DD8B62 /* ImageFeed_iosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFeed_iosUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		84C1939A2ADEB10700DD8B62 /* ProfileViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				849469952A87BDB00027C012 /* ProfileViewController.swift */,
+				84C1939A2ADEB10700DD8B62 /* ProfileViewPresenter.swift */,
 				849469BA2ABA095E0027C012 /* ProfileImageService.swift */,
 				849469B22AB8C8D90027C012 /* ProfileService.swift */,
 			);
@@ -496,6 +499,7 @@
 				849469962A87BDB00027C012 /* ProfileViewController.swift in Sources */,
 				84911D9E2A7821F200F18F70 /* ImageListViewController.swift in Sources */,
 				849469A72AA8FA8C0027C012 /* OAuth2Service.swift in Sources */,
+				84C1939B2ADEB10700DD8B62 /* ProfileViewPresenter.swift in Sources */,
 				849469B12AB391E40027C012 /* UIBlockingProgressHUD.swift in Sources */,
 				849469A52AA8F8740027C012 /* OAuthTokenResponseBody.swift in Sources */,
 				84C193792ADD636C00DD8B62 /* AuthHelper.swift in Sources */,

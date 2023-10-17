@@ -1,13 +1,19 @@
 import UIKit
 import Kingfisher
 
-final class ProfileViewController: UIViewController {
+protocol ProfileViewControllerProtocol: AnyObject {
+    var presenter: ProfileViewPresenterProtocol? { get set }
+    func updateProfileImage()
+}
+
+final class ProfileViewController: UIViewController, ProfileViewControllerProtocol {
     
-    private let token = OAuth2TokenStorage()
-    private let profileService = ProfileService.shared
-    private let profileImageService = ProfileImageService.shared
-    private let imageListService = ImageListService.shared
-    private var profileImageObserver: NSObjectProtocol?
+    var presenter: ProfileViewPresenterProtocol?
+//    private let token = OAuth2TokenStorage()
+//    private let profileService = ProfileService.shared
+//    private let profileImageService = ProfileImageService.shared
+//    private let imageListService = ImageListService.shared
+//    private var profileImageObserver: NSObjectProtocol?
     
     private var profileImage: UIImageView = {
         let profileImage = UIImageView()
@@ -61,9 +67,11 @@ final class ProfileViewController: UIViewController {
         view.backgroundColor = UIColor.ypBlack
         addSubViews()
         applyConstraint()
+        presenter?.observeProfileImage()
+        presenter?.view = self
         updateProfileDetails()
         updateProfileImage()
-        observeProfileImage()
+        
     }
     
     private func addSubViews() {
@@ -93,17 +101,23 @@ final class ProfileViewController: UIViewController {
 }
 
 extension ProfileViewController {
+    
+    func configure(_ presenter: ProfileViewPresenterProtocol) {
+        self.presenter = presenter
+        self.presenter?.view = self
+    }
+    
     private func updateProfileDetails() {
-        guard let profile = profileService.profile else { return }
+        guard let profile = presenter?.getProfileDetails() else { return }
         nameLabel.text = profile.name
         loginLabel.text = profile.loginName
         aboutLabel.text = profile.bio
+        print(profile.name)
+        print(profile.loginName)
     }
     
-    private func updateProfileImage() {
-        guard let profileImageURL = profileImageService.avatarURL,
-              let url = URL(string: profileImageURL)
-        else { return }
+    func updateProfileImage() {
+        guard let url = presenter?.getProfileImageURL() else { return }
         let processor = RoundCornerImageProcessor(cornerRadius: 70, backgroundColor: .clear)
         profileImage.kf.indicatorType = .activity
         profileImage.kf.setImage(
@@ -116,44 +130,36 @@ extension ProfileViewController {
         cache.clearMemoryCache()
         cache.clearDiskCache()
     }
-    
-    private func observeProfileImage() {
-        profileImageObserver = NotificationCenter.default
-            .addObserver(
-                forName: ProfileImageService.DidChangeNotification,
-                object: nil,
-                queue: .main) { [weak self] _ in
-                    guard let self = self else { return }
-                    self.updateProfileImage()
-                }
-    }
+//
+//    private func observeProfileImage() {
+//        profileImageObserver = NotificationCenter.default
+//            .addObserver(
+//                forName: ProfileImageService.DidChangeNotification,
+//                object: nil,
+//                queue: .main) { [weak self] _ in
+//                    guard let self = self else { return }
+//                    self.updateProfileImage()
+//                }
+//    }
     
     @objc private func logoutButtonAction() {
-        showAlert()
+        showLogoutAlert()
     }
     
-    private func cleanAndSwitchToSplashView() {
-        WebViewViewController.clean()
-        profileImageService.clean()
-        profileService.clean()
-        imageListService.clean()
-        token.clean()
-        
-        guard let window = UIApplication.shared.windows.first else { fatalError("Invalid Configuration") }
-        window.rootViewController = SplashViewController()
-    }
-    
-    private func showAlert() {
-        let alert = UIAlertController(
-            title: "Пока, пока!",
-            message: "Уверены что хотите выйти?",
-            preferredStyle: .alert
-        )
-        alert.addAction(UIAlertAction(title: "Да", style: .default) { [weak self] alertAction in
-            guard let self = self else { return }
-            self.cleanAndSwitchToSplashView()
-        })
-        alert.addAction(UIAlertAction(title: "Нет", style: .default, handler: nil))
+    private func showLogoutAlert() {
+        guard let alert = presenter?.showAlert() else { return }
         present(alert, animated: true, completion: nil)
     }
+    
+//    private func cleanAndSwitchToSplashView() {
+//        WebViewViewController.clean()
+//        profileImageService.clean()
+//        profileService.clean()
+//        imageListService.clean()
+//        token.clean()
+//
+//        guard let window = UIApplication.shared.windows.first else { fatalError("Invalid Configuration") }
+//        window.rootViewController = SplashViewController()
+//    }
+    
 }
