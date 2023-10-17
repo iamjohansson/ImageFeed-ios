@@ -4,16 +4,12 @@ import Kingfisher
 protocol ProfileViewControllerProtocol: AnyObject {
     var presenter: ProfileViewPresenterProtocol? { get set }
     func updateProfileImage()
+    func showLogoutAlert()
 }
 
 final class ProfileViewController: UIViewController, ProfileViewControllerProtocol {
     
     var presenter: ProfileViewPresenterProtocol?
-//    private let token = OAuth2TokenStorage()
-//    private let profileService = ProfileService.shared
-//    private let profileImageService = ProfileImageService.shared
-//    private let imageListService = ImageListService.shared
-//    private var profileImageObserver: NSObjectProtocol?
     
     private var profileImage: UIImageView = {
         let profileImage = UIImageView()
@@ -112,8 +108,6 @@ extension ProfileViewController {
         nameLabel.text = profile.name
         loginLabel.text = profile.loginName
         aboutLabel.text = profile.bio
-        print(profile.name)
-        print(profile.loginName)
     }
     
     func updateProfileImage() {
@@ -130,36 +124,14 @@ extension ProfileViewController {
         cache.clearMemoryCache()
         cache.clearDiskCache()
     }
-//
-//    private func observeProfileImage() {
-//        profileImageObserver = NotificationCenter.default
-//            .addObserver(
-//                forName: ProfileImageService.DidChangeNotification,
-//                object: nil,
-//                queue: .main) { [weak self] _ in
-//                    guard let self = self else { return }
-//                    self.updateProfileImage()
-//                }
-//    }
-    
+
     @objc private func logoutButtonAction() {
         showLogoutAlert()
     }
     
-    private func showLogoutAlert() {
+    func showLogoutAlert() {
         guard let alert = presenter?.showAlert() else { return }
         present(alert, animated: true, completion: nil)
     }
-    
-//    private func cleanAndSwitchToSplashView() {
-//        WebViewViewController.clean()
-//        profileImageService.clean()
-//        profileService.clean()
-//        imageListService.clean()
-//        token.clean()
-//
-//        guard let window = UIApplication.shared.windows.first else { fatalError("Invalid Configuration") }
-//        window.rootViewController = SplashViewController()
-//    }
-    
+
 }

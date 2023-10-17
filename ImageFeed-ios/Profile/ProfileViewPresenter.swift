@@ -6,6 +6,7 @@ protocol ProfileViewPresenterProtocol {
     func showAlert() -> UIAlertController
     func getProfileImageURL() -> URL?
     func getProfileDetails() -> Profile?
+    func cleanAndSwitchToSplashView()
 }
 
 final class ProfileViewPresenter: ProfileViewPresenterProtocol {
@@ -55,7 +56,7 @@ final class ProfileViewPresenter: ProfileViewPresenterProtocol {
         return alert
     }
     
-    private func cleanAndSwitchToSplashView() {
+    func cleanAndSwitchToSplashView() {
         WebViewViewController.clean()
         profileImageService.clean()
         profileService.clean()

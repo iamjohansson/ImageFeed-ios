@@ -50,6 +50,9 @@
 		84C193922ADD8E0400DD8B62 /* ImageFeed_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C193912ADD8E0400DD8B62 /* ImageFeed_iosUITests.swift */; };
 		84C193942ADD8E0400DD8B62 /* ImageFeed_iosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C193932ADD8E0400DD8B62 /* ImageFeed_iosUITestsLaunchTests.swift */; };
 		84C1939B2ADEB10700DD8B62 /* ProfileViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1939A2ADEB10700DD8B62 /* ProfileViewPresenter.swift */; };
+		84C1939D2ADED62D00DD8B62 /* ProfileViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1939C2ADED62D00DD8B62 /* ProfileViewTests.swift */; };
+		84C1939F2ADED6E100DD8B62 /* ProfileViewPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1939E2ADED6E100DD8B62 /* ProfileViewPresenterSpy.swift */; };
+		84C193A12ADEE01B00DD8B62 /* ProfileViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C193A02ADEE01B00DD8B62 /* ProfileViewControllerSpy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +125,9 @@
 		84C193912ADD8E0400DD8B62 /* ImageFeed_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFeed_iosUITests.swift; sourceTree = "<group>"; };
 		84C193932ADD8E0400DD8B62 /* ImageFeed_iosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFeed_iosUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		84C1939A2ADEB10700DD8B62 /* ProfileViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewPresenter.swift; sourceTree = "<group>"; };
+		84C1939C2ADED62D00DD8B62 /* ProfileViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewTests.swift; sourceTree = "<group>"; };
+		84C1939E2ADED6E100DD8B62 /* ProfileViewPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewPresenterSpy.swift; sourceTree = "<group>"; };
+		84C193A02ADEE01B00DD8B62 /* ProfileViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerSpy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +312,9 @@
 		84C1937F2ADD68C800DD8B62 /* ImageFeed_iosTests */ = {
 			isa = PBXGroup;
 			children = (
+				84C1939C2ADED62D00DD8B62 /* ProfileViewTests.swift */,
+				84C1939E2ADED6E100DD8B62 /* ProfileViewPresenterSpy.swift */,
+				84C193A02ADEE01B00DD8B62 /* ProfileViewControllerSpy.swift */,
 				84C193802ADD68C800DD8B62 /* WebViewTests.swift */,
 				84C193872ADD6F7200DD8B62 /* WebViewPresenterSpy.swift */,
 				84C193892ADD726100DD8B62 /* WebViewViewControllerSpy.swift */,
@@ -539,9 +548,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C1939D2ADED62D00DD8B62 /* ProfileViewTests.swift in Sources */,
+				84C1939F2ADED6E100DD8B62 /* ProfileViewPresenterSpy.swift in Sources */,
 				84C193812ADD68C800DD8B62 /* WebViewTests.swift in Sources */,
 				84C1938A2ADD726100DD8B62 /* WebViewViewControllerSpy.swift in Sources */,
 				84C193882ADD6F7200DD8B62 /* WebViewPresenterSpy.swift in Sources */,
+				84C193A12ADEE01B00DD8B62 /* ProfileViewControllerSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
