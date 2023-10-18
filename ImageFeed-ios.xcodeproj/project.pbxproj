@@ -54,6 +54,8 @@
 		84C1939F2ADED6E100DD8B62 /* ProfileViewPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1939E2ADED6E100DD8B62 /* ProfileViewPresenterSpy.swift */; };
 		84C193A12ADEE01B00DD8B62 /* ProfileViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C193A02ADEE01B00DD8B62 /* ProfileViewControllerSpy.swift */; };
 		84C193A32ADFF26500DD8B62 /* ImageListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C193A22ADFF26500DD8B62 /* ImageListPresenter.swift */; };
+		84C193A52AE003CB00DD8B62 /* ImageListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C193A42AE003CB00DD8B62 /* ImageListViewTests.swift */; };
+		84C193A72AE003EE00DD8B62 /* ImageListPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C193A62AE003EE00DD8B62 /* ImageListPresenterSpy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +132,8 @@
 		84C1939E2ADED6E100DD8B62 /* ProfileViewPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewPresenterSpy.swift; sourceTree = "<group>"; };
 		84C193A02ADEE01B00DD8B62 /* ProfileViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerSpy.swift; sourceTree = "<group>"; };
 		84C193A22ADFF26500DD8B62 /* ImageListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListPresenter.swift; sourceTree = "<group>"; };
+		84C193A42AE003CB00DD8B62 /* ImageListViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewTests.swift; sourceTree = "<group>"; };
+		84C193A62AE003EE00DD8B62 /* ImageListPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListPresenterSpy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +319,8 @@
 		84C1937F2ADD68C800DD8B62 /* ImageFeed_iosTests */ = {
 			isa = PBXGroup;
 			children = (
+				84C193A42AE003CB00DD8B62 /* ImageListViewTests.swift */,
+				84C193A62AE003EE00DD8B62 /* ImageListPresenterSpy.swift */,
 				84C1939C2ADED62D00DD8B62 /* ProfileViewTests.swift */,
 				84C1939E2ADED6E100DD8B62 /* ProfileViewPresenterSpy.swift */,
 				84C193A02ADEE01B00DD8B62 /* ProfileViewControllerSpy.swift */,
@@ -553,10 +559,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				84C1939D2ADED62D00DD8B62 /* ProfileViewTests.swift in Sources */,
+				84C193A72AE003EE00DD8B62 /* ImageListPresenterSpy.swift in Sources */,
 				84C1939F2ADED6E100DD8B62 /* ProfileViewPresenterSpy.swift in Sources */,
 				84C193812ADD68C800DD8B62 /* WebViewTests.swift in Sources */,
 				84C1938A2ADD726100DD8B62 /* WebViewViewControllerSpy.swift in Sources */,
 				84C193882ADD6F7200DD8B62 /* WebViewPresenterSpy.swift in Sources */,
+				84C193A52AE003CB00DD8B62 /* ImageListViewTests.swift in Sources */,
 				84C193A12ADEE01B00DD8B62 /* ProfileViewControllerSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
