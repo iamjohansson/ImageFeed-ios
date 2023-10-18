@@ -53,6 +53,7 @@
 		84C1939D2ADED62D00DD8B62 /* ProfileViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1939C2ADED62D00DD8B62 /* ProfileViewTests.swift */; };
 		84C1939F2ADED6E100DD8B62 /* ProfileViewPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1939E2ADED6E100DD8B62 /* ProfileViewPresenterSpy.swift */; };
 		84C193A12ADEE01B00DD8B62 /* ProfileViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C193A02ADEE01B00DD8B62 /* ProfileViewControllerSpy.swift */; };
+		84C193A32ADFF26500DD8B62 /* ImageListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C193A22ADFF26500DD8B62 /* ImageListPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,7 @@
 		84C1939C2ADED62D00DD8B62 /* ProfileViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewTests.swift; sourceTree = "<group>"; };
 		84C1939E2ADED6E100DD8B62 /* ProfileViewPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewPresenterSpy.swift; sourceTree = "<group>"; };
 		84C193A02ADEE01B00DD8B62 /* ProfileViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerSpy.swift; sourceTree = "<group>"; };
+		84C193A22ADFF26500DD8B62 /* ImageListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				84911D9D2A7821F200F18F70 /* ImageListViewController.swift */,
+				84C193A22ADFF26500DD8B62 /* ImageListPresenter.swift */,
 				84911DCD2A7E661700F18F70 /* ImageListCell.swift */,
 				849469C92AC355F20027C012 /* ImageListService.swift */,
 			);
@@ -531,6 +534,7 @@
 				8494699B2A93D6420027C012 /* UIColor+Extension.swift in Sources */,
 				849469B72AB8CD4E0027C012 /* Profile.swift in Sources */,
 				849469C82AC3517F0027C012 /* PhotoResult.swift in Sources */,
+				84C193A32ADFF26500DD8B62 /* ImageListPresenter.swift in Sources */,
 				849469B52AB8CAC40027C012 /* ProfileResult.swift in Sources */,
 				8494699D2A9FB2260027C012 /* AuthConfiguration.swift in Sources */,
 				849469D92ACB5FC00027C012 /* Array + Extension.swift in Sources */,

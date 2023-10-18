@@ -64,7 +64,6 @@ final class ProfileViewController: UIViewController, ProfileViewControllerProtoc
         addSubViews()
         applyConstraint()
         presenter?.observeProfileImage()
-        presenter?.view = self
         updateProfileDetails()
         updateProfileImage()
         
