@@ -1,9 +1,9 @@
-import UIKit
+import Foundation
 
 protocol ProfileViewPresenterProtocol {
     var view: ProfileViewControllerProtocol? { get set }
     func observeProfileImage()
-    func showAlert() -> UIAlertController
+    func prepareAlert() -> (title: String, message: String, actionYes: String, actionNo: String)
     func getProfileImageURL() -> URL?
     func getProfileDetails() -> Profile?
     func cleanAndSwitchToSplashView()
@@ -41,19 +41,12 @@ final class ProfileViewPresenter: ProfileViewPresenterProtocol {
         return profile
     }
     
-    func showAlert() -> UIAlertController {
-        let alert = UIAlertController(
-            title: "Пока, пока!",
-            message: "Уверены что хотите выйти?",
-            preferredStyle: .alert
-        )
-        alert.addAction(UIAlertAction(title: "Да", style: .default) { [weak self] alertAction in
-            guard let self = self else { return }
-            cleanAndSwitchToSplashView()
-        })
-        alert.addAction(UIAlertAction(title: "Нет", style: .default, handler: nil))
-        alert.dismiss(animated: true)
-        return alert
+    func prepareAlert() -> (title: String, message: String, actionYes: String, actionNo: String) {
+        let title = "Пока, пока!"
+        let message = "Уверены что хотите выйти?"
+        let actionYes = "Да"
+        let actionNo = "Нет"
+        return (title, message, actionYes, actionNo)
     }
     
     func cleanAndSwitchToSplashView() {
@@ -63,7 +56,6 @@ final class ProfileViewPresenter: ProfileViewPresenterProtocol {
         imageListService.clean()
         token.clean()
         
-        guard let window = UIApplication.shared.windows.first else { fatalError("Invalid Configuration") }
-        window.rootViewController = SplashViewController()
+        view?.switchToSplashScreen()
     }
 }

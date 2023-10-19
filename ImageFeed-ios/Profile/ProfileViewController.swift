@@ -4,7 +4,8 @@ import Kingfisher
 protocol ProfileViewControllerProtocol: AnyObject {
     var presenter: ProfileViewPresenterProtocol? { get set }
     func updateProfileImage()
-    func showLogoutAlert()
+    func showAlert()
+    func switchToSplashScreen()
 }
 
 final class ProfileViewController: UIViewController, ProfileViewControllerProtocol {
@@ -125,12 +126,27 @@ extension ProfileViewController {
     }
 
     @objc private func logoutButtonAction() {
-        showLogoutAlert()
+        showAlert()
+    }
+
+    func showAlert() {
+        guard let inputValue = presenter?.prepareAlert() else { return }
+        let alert = UIAlertController(
+            title: inputValue.title,
+            message: inputValue.message,
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: inputValue.actionYes, style: .default) { [weak self] alertAction in
+            guard let self = self else { return }
+            presenter?.cleanAndSwitchToSplashView()
+        })
+        alert.addAction(UIAlertAction(title: inputValue.actionNo, style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
     
-    func showLogoutAlert() {
-        guard let alert = presenter?.showAlert() else { return }
-        present(alert, animated: true, completion: nil)
+    func switchToSplashScreen() {
+        guard let window = UIApplication.shared.windows.first else { fatalError("Invalid Configuration") }
+        window.rootViewController = SplashViewController()
     }
 
 }

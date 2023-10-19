@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 
 protocol ImageListViewPresenterProtocol: AnyObject {
     var view: ImageListViewControllerProtocol? { get set }

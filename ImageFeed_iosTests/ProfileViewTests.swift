@@ -17,7 +17,7 @@ final class ProfileViewTests: XCTestCase {
         XCTAssertTrue(presenter.viewDidLoadCalled)
     }
     
-    func testShowAlertController() {
+    func testShowAlertCheck() {
         //given
         let view = ProfileViewControllerSpy()
         let presenter = ProfileViewPresenterSpy()
@@ -25,24 +25,10 @@ final class ProfileViewTests: XCTestCase {
         presenter.view = view
         
         //when
-        view.showLogoutAlert()
+        view.showAlert()
         
         //then
         XCTAssertTrue(view.alertCheck)
-    }
-    
-    func testShowAlertPresenter() {
-        //given
-        let view = ProfileViewControllerSpy()
-        let presenter = ProfileViewPresenterSpy()
-        view.presenter = presenter
-        presenter.view = view
-        
-        //when
-        let alert = presenter.showAlert()
-        
-        //then
-        XCTAssertEqual(alert.title, "TestName")
     }
     
     func testLogout() {

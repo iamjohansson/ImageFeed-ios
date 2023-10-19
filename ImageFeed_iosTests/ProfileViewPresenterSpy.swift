@@ -10,7 +10,6 @@ final class ProfileViewPresenterSpy: ProfileViewPresenterProtocol {
                                                      lastName: "test2ndName",
                                                      bio: "aboutMe"))
     var viewDidLoadCalled = false
-    var alertCheck = false
     var profileImageCheck = false
     var logoutCheck = false
     
@@ -18,12 +17,8 @@ final class ProfileViewPresenterSpy: ProfileViewPresenterProtocol {
         viewDidLoadCalled = true
     }
     
-    func showAlert() -> UIAlertController {
-        let alert = UIAlertController(title: "TestName", message: "Test?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default))
-        alert.dismiss(animated: true)
-        alertCheck = true
-        return alert
+    func prepareAlert() -> (title: String, message: String, actionYes: String, actionNo: String) {
+        return ("AlertTitle", "AlertMessage", "Yes", "No")
     }
     
     func getProfileImageURL() -> URL? {
