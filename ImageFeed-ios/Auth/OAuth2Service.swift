@@ -15,6 +15,12 @@ final class OAuth2Service {
         }
     }
     
+    let configuration: AuthConfiguration
+    
+    init(configuration: AuthConfiguration = .standart) {
+        self.configuration = configuration
+    }
+    
     func fetchAuthToken(_ code: String, completion: @escaping (Result<String, Error>) -> Void) {
         assert(Thread.isMainThread)
         guard lastCode != code else { return }
@@ -42,9 +48,9 @@ final class OAuth2Service {
     private func authTokenRequest(code: String) -> URLRequest {
         let url = URL(string: "https://unsplash.com/oauth/token")!
         let parameters = [
-            "client_id": "\(AccessKey)",
-            "client_secret": "\(SecretKey)",
-            "redirect_uri": "\(RedirectURI)",
+            "client_id": "\(configuration.accessKey)",
+            "client_secret": "\(configuration.secretKey)",
+            "redirect_uri": "\(configuration.redirectURI)",
             "code": "\(code)",
             "grant_type": "authorization_code"
         ]
